@@ -105,7 +105,7 @@ Applied the diagnostic to a real framework? Found a closed-loop governance syste
 
 | File | Description |
 |------|-------------|
-| [`THE_FUMAN_MANIFESTO_v1.5.0.pdf`](THE_FUMAN_MANIFESTO_v1.5.0.pdf) | The complete governance framework (main artifact) — [direct download](https://github.com/edmeyman/fuman-manifesto/raw/main/THE_FUMAN_MANIFESTO_v1.5.0.pdf) |
+| [`THE_FUMAN_MANIFESTO_v1.5.0.pdf`](THE_FUMAN_MANIFESTO_v1.5.0.pdf) | The complete governance framework (main artifact) — [direct download](https://github.com/edmeyman/governance-diagnostics/raw/main/THE_FUMAN_MANIFESTO_v1.5.0.pdf) |
 | [`COMPANION_NOTE.pdf`](COMPANION_NOTE.pdf) | One-page summary of status, intent, and intended use |
 | [`CHANGELOG.md`](CHANGELOG.md) | Version history |
 | `LICENSE` | CC BY 4.0 |
