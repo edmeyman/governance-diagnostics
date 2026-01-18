@@ -166,7 +166,7 @@ For information about FERZ's governance frameworks for regulated industries, vis
 
 ```
 FERZ, Inc. (2026). The Fuman Manifesto: A Governance Framework Diagnostic 
-(Version 1.5.0). https://github.com/edmeyman/fuman-manifesto
+(Version 1.5.0). https://github.com/edmeyman/governance-diagnostics
 ```
 
 ---
