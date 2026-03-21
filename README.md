@@ -158,7 +158,7 @@ The Fuman Manifesto was developed by FERZ, Inc. as a diagnostic instrument for e
 
 FERZ builds governance systems where terms are operationally defined, metrics are falsifiable, and audit trails replay decisions against fixed invariants — not frameworks that succeed only by their own definitions.
 
-For information about FERZ's governance frameworks for regulated industries, visit [ferz.ci](https://ferz.ai).
+For information about FERZ's governance frameworks for regulated industries, visit [ferz.ai](https://ferz.ai).
 
 ---
 
