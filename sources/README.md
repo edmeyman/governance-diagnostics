@@ -4,10 +4,10 @@ The repository does not contain the original editable source used to export v1.5
 
 Editable source is provided for all new v1.6.0 material:
 
-- `DIAGNOSTIC_NOTE_v1.6.0.md`
+- `READER_NOTICE_v1.6.0.md`
 - `COMPANION_NOTE_v1.6.0.md`
 
-The build script removes superseded status markings from the base PDF, inserts the diagnostic note, applies the terminology and incident-analysis corrections, updates metadata, and generates the companion note.
+The build script removes superseded status markings from the base PDF, inserts the reader notice, updates publication metadata and document history, and generates the companion note. It does not revise the fictional framework's doctrine.
 
 Run the build and validation from the repository root:
 

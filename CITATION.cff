@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this diagnostic, please cite it as follows."
+message: "If you use this satirical thought experiment, please cite it as follows."
 title: "The Fuman Manifesto: A Governance Framework Diagnostic"
 version: 1.6.0
 date-released: 2026-08-07
@@ -9,17 +9,14 @@ repository-code: "https://github.com/edmeyman/governance-diagnostics"
 url: "https://github.com/edmeyman/governance-diagnostics"
 license: CC-BY-4.0
 keywords:
-  - AI governance
-  - authorization artifact
-  - pre-execution authorization
-  - runtime authorization boundary
-  - fail-closed governance
-  - observability
+  - governance
   - satire
+  - thought experiment
+  - compliance
 abstract: >-
-  A satirical governance-framework diagnostic for testing operational
-  grounding, pre-execution authorization, and independent reconstruction of
-  authorization verdicts.
+  A satirical governance thought experiment using an entirely fictional
+  human-avian integration framework to examine elaborate governance form,
+  internal consistency, and practical function.
 preferred-citation:
   type: report
   title: "The Fuman Manifesto: A Governance Framework Diagnostic"

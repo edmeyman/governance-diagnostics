@@ -1,50 +1,40 @@
 # The Fuman Manifesto
 
-*Companion Note: Status, Intent, and Diagnostic Use*
+*Companion Note: Status, Intent, and Satirical Context*
 
 ## Status
 
-The Fuman Manifesto is a satirical thought experiment, not a standard, policy document, product specification, or FERZ offering. It is not intended for implementation. No human-avian integration programs exist, are planned, or are endorsed by FERZ, Inc.
+The Fuman Manifesto is a satirical thought experiment, not a standard, policy document, product specification, technical framework, implementation guide, or FERZ offering. Its agencies, programs, requirements, metrics, incidents, and human-avian subject matter are fictional.
 
-The document deliberately reproduces familiar features of governance frameworks: metrics, thresholds, taxonomies, audit requirements, incident analysis, stakeholder processes, and compliance architecture. Its structural completeness is intentional and central to its purpose.
+No human-avian integration program exists, is planned, or is endorsed by FERZ, Inc.
 
 ## Intent
 
-The Manifesto is a diagnostic lens for evaluating governance frameworks, particularly in AI and machine learning. It demonstrates that governance form can be perfected independently of governance function.
+The document deliberately reproduces familiar features of governance publications: definitions, metrics, thresholds, taxonomies, audit requirements, incident analysis, stakeholder processes, and compliance architecture. Its structural completeness is intentional and central to the joke.
 
-The core question is: **What distinguishes a governance framework that constrains real execution from one that merely documents its own operation?**
+The fictional domain allows readers to examine governance form without first debating a real program or technology. Terms can validate other terms inside the same framework, creating a closed loop that is internally elaborate while remaining detached from practical function.
 
 ## Why Satire?
 
-Satire separates structural analysis from domain-specific argument. The fictional subject matter allows readers to examine a framework's internal mechanics without first accepting its substantive premises.
+Satire makes the machinery visible. The impossible subject matter removes any temptation to mistake administrative completeness for evidence that the underlying program is real or workable.
 
-The result is a closed-loop governance system. Its terms largely validate other terms inside the same framework. It can achieve internal consistency while providing no external operational authority.
+The core question is: **What does a real governance framework provide that the Fuman Manifesto does not?**
 
 ## Intended Use
 
-- **Pedagogy:** Teach governance architecture, incident analysis, and compliance structure using a domain that requires no prior expertise.
-- **Calibration:** Compare real governance frameworks against the Manifesto to identify internally complete but operationally hollow elements.
-- **Commentary:** Examine whether governance requirements constrain execution or merely make execution observable after the fact.
+- **Pedagogy:** Examine governance architecture and compliance structure using a domain that requires no prior expertise.
+- **Calibration:** Compare the fictional document's self-referential terms and evidence requirements with those of a real framework.
+- **Commentary:** Discuss the difference between elaborate governance form and practical function.
 
-## Three Tests the Manifesto Fails
+The Manifesto is not intended for implementation.
 
-### 1. Grounding Test
+## Separation from FERZ Work
 
-Do the framework's terms and measurements connect to states of the world that exist independently of the framework? CAST is precisely specified, but it measures a fictional construct using fictional inputs.
+This publication is separate from FERZ's technical standards, products, and serious governance work. Nothing in the Manifesto defines, summarizes, or modifies a FERZ technical position.
 
-### 2. Authorization Boundary Test
+## Publication Status
 
-Must every effect-bearing action cross a fail-closed, pre-execution authorization boundary before release? The Manifesto contains warnings, declarations, licenses, and audit duties, but no non-bypassable authorization boundary.
-
-### 3. Reconstruction Test
-
-Does an authorization artifact allow an independent party to reconstruct the verdict from the governed inputs, policy state, authority state, and recorded outcome without access to the governed system? The Manifesto produces extensive logs, but no independently reconstructable authorization verdict.
-
-## Observability Versus Authorization
-
-The Manifesto's First Axiom states that governance creates traceability. That statement is intentionally incomplete. A record of execution may explain what happened without establishing that the action was permitted before it happened.
-
-For serious governance, traceability remains necessary but insufficient. An effect-bearing action must be evaluated before execution; failure to complete authorization must block release; and the verdict must be recorded in an independently reconstructable authorization artifact.
+Version 1.6.0 is a publication-maintenance release. It adds this status clarification and a reader notice, removes obsolete draft markings, corrects stale links, and standardizes citation metadata. It does not add substantive governance doctrine to the fictional framework.
 
 ## Citation
 
@@ -53,7 +43,5 @@ FERZ, Inc. (2026). *The Fuman Manifesto: A Governance Framework Diagnostic* (Ver
 ## Attribution
 
 FERZ, Inc.
-
-The Enforcement Layer of AI Governance
 
 https://ferz.ai

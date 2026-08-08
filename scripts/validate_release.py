@@ -14,6 +14,19 @@ MAIN = ROOT / "THE_FUMAN_MANIFESTO_v1.6.0.pdf"
 COMPANION = ROOT / "COMPANION_NOTE_v1.6.0.pdf"
 COMPANION_ALIAS = ROOT / "COMPANION_NOTE.pdf"
 
+FERZ_SEPARATION_TERMS = (
+    "grounding test",
+    "authorization artifact",
+    "pre-execution authorization",
+    "runtime authorization boundary",
+    "fail-closed governance",
+    "effect-bearing action",
+    "independently reconstructable",
+    "observability versus authorization",
+    "authorization boundary test",
+    "reconstruction test",
+)
+
 
 def require(condition: bool, message: str) -> None:
     if not condition:
@@ -54,11 +67,10 @@ def main() -> int:
         (
             "Version 1.6.0",
             "PUBLIC DIAGNOSTIC EDITION",
-            "Authorization Boundary Test",
-            "Reconstruction Test",
-            "tamper-evident ledger",
-            "authorization artifact",
-            "independent party can reconstruct",
+            "Reader Notice",
+            "tamper-proof ledger",
+            "The framework does not prevent poor judgment",
+            "Publication maintenance: reader notice, status, links, citation, metadata",
         ),
     )
     companion_reader = check_pdf(
@@ -66,8 +78,9 @@ def main() -> int:
         2,
         "The Fuman Manifesto Companion Note",
         (
-            "Three Tests the Manifesto Fails",
-            "Observability Versus Authorization",
+            "satirical thought experiment",
+            "closed loop",
+            "separate from FERZ's technical standards",
             "https://github.com/edmeyman/governance-diagnostics",
             "https://ferz.ai",
         ),
@@ -77,7 +90,6 @@ def main() -> int:
     for prohibited in (
         "CONFIDENTIAL DRAFT",
         "DRAFT FOR PUBLIC COMMENT",
-        "tamper-proof",
         "ferzconsulting.com",
         "github.com/edmeyman/fuman-manifesto",
     ):
@@ -99,10 +111,31 @@ def main() -> int:
         ROOT / "CHANGELOG.md",
         ROOT / "CITATION.cff",
         ROOT / "RELEASE_NOTES_v1.6.0.md",
-        ROOT / "sources" / "DIAGNOSTIC_NOTE_v1.6.0.md",
+        ROOT / "sources" / "READER_NOTICE_v1.6.0.md",
         ROOT / "sources" / "COMPANION_NOTE_v1.6.0.md",
     ):
         require(path.exists(), f"Missing release file: {path.relative_to(ROOT)}")
+
+    require(
+        not (ROOT / "sources" / "DIAGNOSTIC_NOTE_v1.6.0.md").exists(),
+        "Superseded diagnostic-note source remains",
+    )
+
+    public_text = combined + "\n" + "\n".join(
+        path.read_text(encoding="utf-8")
+        for path in (
+            ROOT / "README.md",
+            ROOT / "CHANGELOG.md",
+            ROOT / "CITATION.cff",
+            ROOT / "RELEASE_NOTES_v1.6.0.md",
+            ROOT / "sources" / "README.md",
+            ROOT / "sources" / "READER_NOTICE_v1.6.0.md",
+            ROOT / "sources" / "COMPANION_NOTE_v1.6.0.md",
+        )
+    )
+    public_text = public_text.lower()
+    for term in FERZ_SEPARATION_TERMS:
+        require(term not in public_text, f"FERZ technical terminology entered Fuman material: {term}")
 
     print("v1.6.0 validation passed")
     return 0

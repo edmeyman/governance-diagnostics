@@ -9,20 +9,12 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [1.6.0] - August 2026
 
 ### Added
-- Diagnostic Note replacing the unused page 5
-- Grounding Test
-- Authorization Boundary Test
-- Reconstruction Test
-- Explicit distinction between observability and authorization
-- Independently reconstructable authorization artifact criterion
+- Reader Notice replacing the unused page 5
 - Reproducible PDF build and release validation scripts
 - Machine-readable citation metadata
 
 ### Changed
 - Reclassified the artifact as a Public Diagnostic Edition
-- Reframed the First Axiom as an intentional diagnostic deficiency rather than a sufficient governance principle
-- Revised the canonical incident analysis to distinguish warning signals and logs from pre-execution authorization
-- Replaced "tamper-proof" with "tamper-evident"
 - Updated FERZ website and repository references
 - Standardized the canonical citation title
 - Added complete PDF author, title, subject, and keyword metadata
@@ -31,6 +23,8 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - "DRAFT FOR PUBLIC COMMENT" and "CONFIDENTIAL DRAFT" markings
 - Unused blank page
 - Stale `ferzconsulting.com` and `edmeyman/fuman-manifesto` references
+
+This is a publication-maintenance release. It does not add substantive governance doctrine to the fictional framework.
 
 ## [1.5.0] - January 2026
 

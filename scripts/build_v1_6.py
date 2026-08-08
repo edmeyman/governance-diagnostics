@@ -3,8 +3,8 @@
 
 The v1.5.0 PDF is retained as the historical base artifact. This build applies
 the controlled v1.6.0 publication overlays, replaces the intentionally unused
-page 5 with the diagnostic note, and generates the companion note from its
-Markdown source.
+page 5 with a reader notice, and generates the companion note from its
+Markdown source. It does not revise the fictional framework's doctrine.
 """
 
 from __future__ import annotations
@@ -38,7 +38,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE_PDF = ROOT / "THE_FUMAN_MANIFESTO_v1.5.0.pdf"
 OUTPUT_PDF = ROOT / "THE_FUMAN_MANIFESTO_v1.6.0.pdf"
 COMPANION_SOURCE = ROOT / "sources" / "COMPANION_NOTE_v1.6.0.md"
-DIAGNOSTIC_SOURCE = ROOT / "sources" / "DIAGNOSTIC_NOTE_v1.6.0.md"
+READER_NOTICE_SOURCE = ROOT / "sources" / "READER_NOTICE_v1.6.0.md"
 COMPANION_PDF = ROOT / "COMPANION_NOTE_v1.6.0.pdf"
 COMPANION_ALIAS = ROOT / "COMPANION_NOTE.pdf"
 
@@ -226,7 +226,7 @@ def draw_running_overlay(c: canvas.Canvas, page_number: int) -> None:
     )
 
 
-def draw_diagnostic_page(c: canvas.Canvas) -> None:
+def draw_reader_notice_page(c: canvas.Canvas) -> None:
     c.setFillColor(colors.white)
     c.rect(0, 0, PAGE_W, PAGE_H, stroke=0, fill=1)
     draw_running_overlay(c, 5)
@@ -235,7 +235,7 @@ def draw_diagnostic_page(c: canvas.Canvas) -> None:
     styles["Title"].alignment = TA_LEFT
     styles["Title"].fontSize = 20
     styles["Title"].leading = 23
-    story = parse_markdown(DIAGNOSTIC_SOURCE, styles)
+    story = parse_markdown(READER_NOTICE_SOURCE, styles)
     available_height = 650
     from reportlab.platypus import Frame
 
@@ -243,81 +243,16 @@ def draw_diagnostic_page(c: canvas.Canvas) -> None:
     frame.addFromList(story, c)
 
 
-def draw_tamper_evident_overlay(c: canvas.Canvas) -> None:
+def draw_document_history(c: canvas.Canvas) -> None:
     c.setFillColor(colors.white)
-    c.rect(66, 474, 485, 45, stroke=0, fill=1)
-    c.rect(66, 405, 485, 75, stroke=0, fill=1)
-    style = ParagraphStyle(
-        "Replacement",
-        fontName="DejaVuSans",
-        fontSize=9.5,
-        leading=12,
-        textColor=colors.black,
-    )
-    paragraph = Paragraph(
-        "All flight operations must be logged in a tamper-evident ledger including altitude, wingbeat frequency, emotional state of both participants, and any disagreements about navigation resolved during flight.",
-        style,
-    )
-    paragraph.wrapOn(c, 480, 42)
-    paragraph.drawOn(c, 68, 484)
-    c.setFillColor(colors.HexColor("#367CBA"))
-    c.setFont("DejaVuSans-Bold", 10.2)
-    c.drawString(68, 461, "6.2 Ethical Flight Constraints")
-    constraint = Paragraph(
-        "The fuman must not engage in aggressive aerial maneuvers targeting pedestrians, assert dominance over non-fuman species, or claim sovereign authority over airspace without proper certification from the Fuman Oversight Authority.",
-        style,
-    )
-    constraint.wrapOn(c, 480, 48)
-    constraint.drawOn(c, 68, 414)
-
-
-def draw_page_25_revision(c: canvas.Canvas) -> None:
-    from reportlab.platypus import Frame
-
-    c.setFillColor(colors.white)
-    c.rect(62, 414, 490, 246, stroke=0, fill=1)
-    c.setFillColor(BLUE)
-    c.setFont("DejaVuSans-Bold", 14.5)
-    c.drawString(69, 640, "A.8 Framework Integration: Lessons Learned")
-
-    body_style = ParagraphStyle(
-        "A8Body",
-        fontName="DejaVuSans",
-        fontSize=8.5,
-        leading=10.5,
-        textColor=colors.black,
-        spaceAfter=6,
-    )
-    story = [
-        Paragraph(
-            "The Overconfident Ascent Incident demonstrates the interdependence of the framework's components. CAST degradation generated warnings and extensive records, but no recorded step established that the ascent was permitted before execution.",
-            body_style,
-        ),
-        Paragraph(
-            "<b>Key insight:</b> CAST was an early-warning signal, not an authorization artifact. The logs explain how the incident developed; they do not prove that an authorized verdict preceded release. A serious framework would require the proposed ascent to cross a fail-closed runtime authorization boundary. Missing or unresolved authority would block execution.",
-            body_style,
-        ),
-        Paragraph(
-            "<i>Applicable beyond vertical sovereignty:</i> Multi-agent systems with asymmetric capabilities, shared authority, and effect-bearing actions face the same distinction. Observability can support investigation without providing authorization.",
-            body_style,
-        ),
-        Paragraph(
-            "<b>Cross-domain mapping:</b> Substitute principal for human, executing system for avian, effect-bearing action for trajectory, and authorization artifact for the pre-execution record. The relevant question is whether execution was permitted before the effect existed and whether an independent party can reconstruct that verdict.",
-            body_style,
-        ),
-    ]
-    frame = Frame(69, 426, 474, 198, leftPadding=0, rightPadding=0, topPadding=0, bottomPadding=0)
-    frame.addFromList(story, c)
-
-    c.setFillColor(colors.white)
-    c.rect(60, 38, 495, 382, stroke=0, fill=1)
+    c.rect(60, 38, 495, 338, stroke=0, fill=1)
     c.setFillColor(BLUE)
     c.setFont("DejaVuSans-Bold", 15)
-    c.drawString(69, 397, "Document History")
+    c.drawString(69, 350, "Document History")
 
     data = [
         ["Version", "Date", "Description"],
-        ["1.6.0", "Aug 2026", "Public diagnostic edition; authorization boundary and reconstruction tests; publication corrections"],
+        ["1.6.0", "Aug 2026", "Publication maintenance: reader notice, status, links, citation, metadata"],
         ["1.5.0", "Jan 2026", "UD severity taxonomy, VNC terminology, retention requirements"],
         ["1.4.0", "Jan 2026", "CAST protocol, audit artifacts, governance axiom"],
         ["1.3.0", "Jan 2026", "CAST formalization, incident analysis, cross-domain bridge"],
@@ -347,7 +282,7 @@ def draw_page_25_revision(c: canvas.Canvas) -> None:
         )
     )
     _, table_height = table.wrapOn(c, 474, 330)
-    table.drawOn(c, 69, 382 - table_height)
+    table.drawOn(c, 69, 335 - table_height)
 
 
 def redacted_base() -> bytes:
@@ -368,15 +303,8 @@ def redacted_base() -> bytes:
             for rect in page.search_for(footer):
                 mark(page, rect + (-8, -4, 8, 4))
 
-        if index == 7:
-            starts = page.search_for("All flight operations must be logged")
-            ends = page.search_for("resolved during flight.")
-            if starts and ends:
-                mark(page, fitz.Rect(64, starts[0].y0 - 2, 553, ends[-1].y1 + 3))
-            mark(page, fitz.Rect(64, 310, 553, 390))
-
         if index == 24:
-            mark(page, fitz.Rect(58, 128, 555, 758))
+            mark(page, fitz.Rect(58, 416, 555, 758))
 
     for page in document:
         page.apply_redactions(images=fitz.PDF_REDACT_IMAGE_NONE)
@@ -392,7 +320,7 @@ def build_manifesto() -> None:
 
     for index, original_page in enumerate(reader.pages):
         if index == 4:
-            replacement = overlay_reader(draw_diagnostic_page).pages[0]
+            replacement = overlay_reader(draw_reader_notice_page).pages[0]
             writer.add_page(replacement)
             continue
 
@@ -402,10 +330,8 @@ def build_manifesto() -> None:
         elif index >= 2:
             page.merge_page(overlay_reader(lambda c, n=index + 1: draw_running_overlay(c, n)).pages[0])
 
-        if index == 7:
-            page.merge_page(overlay_reader(draw_tamper_evident_overlay).pages[0])
         if index == 24:
-            page.merge_page(overlay_reader(draw_page_25_revision).pages[0])
+            page.merge_page(overlay_reader(draw_document_history).pages[0])
             page.merge_page(overlay_reader(lambda c: draw_running_overlay(c, 25)).pages[0])
 
         writer.add_page(page)
@@ -414,8 +340,8 @@ def build_manifesto() -> None:
         {
             "/Title": "The Fuman Manifesto: A Governance Framework Diagnostic",
             "/Author": "FERZ, Inc.",
-            "/Subject": "A satirical diagnostic for governance grounding, pre-execution authorization, and independent verdict reconstruction",
-            "/Keywords": "AI governance, authorization artifact, runtime authorization boundary, fail-closed governance, observability, satire",
+            "/Subject": "A satirical governance thought experiment in a fictional human-avian domain",
+            "/Keywords": "governance, satire, thought experiment, compliance, human-avian fiction",
             "/Creator": "FERZ, Inc. reproducible v1.6.0 build",
             "/Producer": "pypdf and ReportLab",
         }
@@ -442,7 +368,7 @@ def build_companion() -> None:
     split_index = next(
         i
         for i, flowable in enumerate(story)
-        if isinstance(flowable, Paragraph) and flowable.getPlainText() == "Three Tests the Manifesto Fails"
+        if isinstance(flowable, Paragraph) and flowable.getPlainText() == "Intended Use"
     )
     story.insert(split_index, PageBreak())
 
@@ -456,7 +382,7 @@ def build_companion() -> None:
         bottomMargin=0.65 * inch,
         title="The Fuman Manifesto Companion Note",
         author="FERZ, Inc.",
-        subject="Status, intent, and diagnostic use",
+        subject="Status, intent, and satirical context",
         pageCompression=1,
     )
     doc.build(story, onFirstPage=companion_page, onLaterPages=companion_page)
@@ -469,8 +395,8 @@ def build_companion() -> None:
         {
             "/Title": "The Fuman Manifesto Companion Note",
             "/Author": "FERZ, Inc.",
-            "/Subject": "Status, intent, and diagnostic use",
-            "/Keywords": "AI governance, authorization artifact, observability, satire",
+            "/Subject": "Status, intent, and satirical context",
+            "/Keywords": "governance, satire, thought experiment, compliance",
             "/Creator": "FERZ, Inc. reproducible v1.6.0 build",
             "/Producer": "pypdf and ReportLab",
         }

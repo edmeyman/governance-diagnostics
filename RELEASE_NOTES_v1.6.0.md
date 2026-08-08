@@ -4,14 +4,15 @@
 
 **Release date:** August 7, 2026
 
-Version 1.6.0 preserves the satirical framework while correcting the interpretation surrounding it. Earlier editions treated traceability as the terminal function of governance. This revision makes the missing authorization layer explicit.
+Version 1.6.0 is a publication-maintenance release. It preserves the satirical framework and does not introduce substantive governance doctrine.
 
-The release adds three diagnostic tests:
+The release:
 
-1. Grounding Test
-2. Authorization Boundary Test
-3. Reconstruction Test
+- Replaces the unused page 5 with a reader notice identifying the work as fiction and satire
+- Removes conflicting draft and confidential markings
+- Updates stale repository and publisher links
+- Standardizes the citation title and PDF metadata
+- Adds reproducible build and release-validation tooling
+- Preserves version 1.5.0 as the historical edition
 
-It also replaces the unused page 5 with a diagnostic note, revises the incident analysis, changes "tamper-proof" to "tamper-evident," removes conflicting draft labels, updates citations and FERZ references, and adds reproducible build and validation tooling.
-
-Version 1.5.0 remains in the repository as the historical edition.
+The Fuman Manifesto remains separate from FERZ's technical standards, products, and serious governance work.
