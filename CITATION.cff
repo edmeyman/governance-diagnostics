@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this satirical thought experiment, please cite it as follows."
+title: "The Fuman Manifesto: A Governance Framework Diagnostic"
+version: 1.6.0
+date-released: 2026-08-07
+authors:
+  - name: "FERZ, Inc."
+repository-code: "https://github.com/edmeyman/governance-diagnostics"
+url: "https://github.com/edmeyman/governance-diagnostics"
+license: CC-BY-4.0
+keywords:
+  - governance
+  - satire
+  - thought experiment
+  - compliance
+abstract: >-
+  A satirical governance thought experiment using an entirely fictional
+  human-avian integration framework to examine elaborate governance form,
+  internal consistency, and practical function.
+preferred-citation:
+  type: report
+  title: "The Fuman Manifesto: A Governance Framework Diagnostic"
+  version: 1.6.0
+  year: 2026
+  authors:
+    - name: "FERZ, Inc."
+  url: "https://github.com/edmeyman/governance-diagnostics"
